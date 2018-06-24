@@ -1,0 +1,39 @@
+def infNorm(vector):
+    
+    """
+    1) check if empty vector.
+    2) If empty, print Error and return null.
+    3) If not empty vector, 
+    4) initialize currentMax to the absolute value of first element in vector.
+    5) iterate over remaining vector elements.
+    6) during iteration
+        if absolute value of element of vector 
+        is greater than currentMax, then assign abs(element) to currentMax.
+    7) return currentMax.
+    """
+    if(len(vector) == 0) : #checks for empty vector
+        print("ERROR: Empty Vector");
+        return null; 
+        
+    else :
+        currentMax = abs(vector[0]); #initialize our output
+        
+        for i in range(1,len(vector)):
+            if(abs(vector[i]) > currentMax): #iteration
+                currentMax = abs(vector[i]);
+    
+        return currentMax #finalize output
+"""
+TEST 1 Empty Vector
+vector = [];
+print(infNorm(vector));
+ERROR: Empty Vector
+"""
+#Test 1 returns Error because there is no currentMax and no value for the infNorm.
+"""
+TEST 2 Non-Empty Vector
+vector = [2,3,8,-19,22,21,-23,-24,2]
+print(infNorm(vector));
+infNorm(vector) = 24
+"""
+#Test 2 provides a valid and correct input as it follows our specifications.
