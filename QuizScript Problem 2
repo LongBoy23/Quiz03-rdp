@@ -1,0 +1,55 @@
+#Problem 2 - VectSubtract
+def vectSubtract(vector01, vector02):
+    """
+    This function takes two vectors.
+    1) Checks to ensure the lengths are equal.
+    2) If not equal, function prints error and returns an empty list.
+    3) If equal, the subtraction vector is initialized as en empty list.
+    4) Iterates over both vectors
+        simulateneously using a range [0,length-1]
+    5) During iteration, the value of vector01[i] - vector02[i]
+        is stored in the result vector.
+    6) Returns output as the subtraction vector.
+    """
+    
+    if(len(vector01) == len(vector02)): #if lengths are equal
+        vectSubtract = []; #initialize subtraction vector
+        for i in range(0, len(vector01)): #iterate over range
+            vectSubtract.append(vector01[i] - vector02[i]); #compute and append vector elements to end of subtraction vector.
+        return vectSubtract;
+    
+    else: #lengths are not equal.
+        print("ERROR: Vectors are not of equal length.");
+        return [];
+"""
+TEST 1 Empty Lists
+vector01 = [];
+vector02 = [];
+print(vectSubtract(vector01,vector02));
+vectSubtract = []
+"""
+#Test 1 provides a valid output because although the vectors are empty lists, they are of similar length.
+"""
+TEST 2 Vectors of Unequal Lengths
+vector01 = [1,3,5];
+vector02 = [7,4,21,21];
+print(vectSubtract(vector01,vector02));
+return = ERROR: Vectors are not of equal length.
+"""
+#Test 2 results as an error because of our specifications that two vectors of unequal lengths cannot be ran through the test.
+"""
+TEST 3 Vectors of Equal Lengths
+vector01 = [2,2,2];
+vector02 = [2,1,3];
+print(vectSubtract(vector01,vector02));
+vectSubtract = [0,1,-1]
+"""
+#Test 3 provides a valid output because the vector lengths are similar
+"""
+TEST 4 Vector and a Scalar
+vector01 = [2,2,1];
+scalar = 5;
+print(vectSubtract(vector01,scalar));
+"""
+#Test 4 results in error because scalar has no length so it is invalid input
+
