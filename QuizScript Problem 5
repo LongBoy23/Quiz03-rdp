@@ -1,0 +1,59 @@
+Question 5 - normalize(vector)
+def infNorm(vector):
+    #Because problem 4 leads into 5 I included my code for number 4 into number 5!!
+    """
+    1) check if empty vector.
+    2) If empty, print Error and return null.
+    3) If not empty vector, 
+    4) initialize currentMax to the absolute value of first element in vector. 
+    5) iterate over remaining vector elements.
+    6) during iteration
+        if absolute value of element of vector 
+        is greater than currentMax, then assign abs(element) to currentMax.
+    7) return currentMax.
+    """
+    #current max is used as a variable in this scenario NOT A FUNCTION
+    if(len(vector) == 0) :
+        print("ERROR: Empty Vector");
+        return null;
+        
+    else :
+        currentMax = abs(vector[0]); #set a first value for our answer
+        for i in range(1,len(vector)):
+            if(abs(vector[i]) > currentMax): #if the second number is bigger the value of it will replace our value for currentMax
+                currentMax = vector[i];
+    
+        return currentMax
+#did not include my test cases for number 4 as they are unneccessary
+
+def normalize(vector) :
+  """
+  1) check if empty vector.
+  2) If empty, print Error and return null. 
+  3) If not empty vector, 
+  4) compute and store infNorm in infNorm
+  5) Iterate over range [0, len-1]
+  6) during iteration
+      compute element / infNorm store in current vector index.
+  """
+    
+  if (len(vector) == 0): #Empty Vector Check
+    print("ERROR: Empty Vector");
+    return [];
+  else: #We have values for norm
+    currentMax = infNorm(vector)
+    normalizer=[] #Store our values within the normalizer vector
+    for i in range(len(vector)):
+      normalizer.append((1/currentMax)*vector[i]) #remember parentheses
+    return normalizer 
+"""
+TEST 1 Vector with Values
+vector = [14,14,7];
+print(normalize(vector))
+"""
+#Test 1 provides a valid and correct output
+"""
+TEST 2 Empty Vector = []
+print(normalize(vector))
+"""
+#Test 2 provides an ERROR because it is in fact an empty vector
