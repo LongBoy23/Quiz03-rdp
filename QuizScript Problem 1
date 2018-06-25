@@ -1,0 +1,57 @@
+def dot(vector01, vector02):
+    """
+    This function takes two vectors.
+    1) Checks to ensure the lengths are equal.
+    2) If not equal, function prints error and returns an empty list.
+    3) If equal, the dot product is initialized as en empty list.
+    4) Iterates over both vectors
+        simulateneously using a range [0,length-1]
+    5) During iteration, the value of vector01[i] * vector02[i] is added to value of vector01[j] * vector02[j] and so forth.
+    6) Returns the final dot product.
+    """
+    
+    if(len(vector01) == len(vector02)): #if lengths are equal
+        dotVector = 0; #initialize product vector
+        for i in range(0, len(vector01)): #iterate over range
+            dotVector+=(vector01[i] * vector02[i]); #compute and summate  vector element products to end of dot vector.
+        return dotVector
+    
+    else: #lengths are not equal.
+        print("ERROR: Vectors are not of equal length.");
+        return [];
+#Now our tests
+"""
+#TEST 1 Empty Lists
+vect1 = [];
+vect2 = [];
+print(dot(vect1, vect2));
+return = 0
+"""
+# Because techinally our vectors are the same length we received a 0.
+
+"""
+TEST 2 Vectors of Unequal Lengths
+vect1 = [0,1,2];
+vect2 = [1];
+print(dot(vect1, vect2));
+return = Vectors are not of equal length
+"""
+#Test 2 Returns ERROR
+
+"""
+TEST 3 Vectors of Equal Lengths
+vector01 = [1,0,3,4];
+vector02 = [1,2,3,4];
+print(dot(vector01, vector02));
+return = 26
+"""
+#Test 3 Gives Valid Input!
+
+"""
+Test 4 Vector and Scalar
+vect1 = [1,2,3];
+scalar = 6;
+print(dot(vect1, scalar));
+return = TypeError
+"""
+#Test 4 returns a Type Error because the scalar has no len()
