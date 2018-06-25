@@ -27,7 +27,7 @@ vect2 = [];
 print(dot(vect1, vect2));
 return = 0
 """
-# Because techinally our vectors are the same length we received a 0.
+# Because technically our vectors are the same length we received a 0.
 
 """
 TEST 2 Vectors of Unequal Lengths
