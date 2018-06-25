@@ -11,7 +11,7 @@ def dot(vector01, vector02):
     """
     
     if(len(vector01) == len(vector02)): #if lengths are equal
-        dotVector = 0; #initialize product vector
+        dotVector = 0; #initialize dot vector
         for i in range(0, len(vector01)): #iterate over range
             dotVector+=(vector01[i] * vector02[i]); #compute and summate  vector element products to end of dot vector.
         return dotVector
