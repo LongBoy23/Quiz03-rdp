@@ -11,6 +11,8 @@ def infNorm(vector):
         is greater than currentMax, then assign abs(element) to currentMax.
     7) return currentMax.
     """
+    #currentMax is used as a variable in this problem NOT as a function!
+    
     if(len(vector) == 0) : #checks for empty vector
         print("ERROR: Empty Vector");
         return null; 
